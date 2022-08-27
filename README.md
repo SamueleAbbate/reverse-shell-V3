@@ -17,7 +17,7 @@
     Per qualsiasi problema o richiesta vi consiglio di unirvi nel discord di I'M ROOT "https://discord.gg/wkn8gdEjjW"
     Sarò felice di aiutarvi.
 
-## en
+## EN
     A reverse shell that creates persistence !!!
     For any problem or request I suggest you join the I'M ROOT discord 
     "https://discord.gg/wkn8gdEjjW"
