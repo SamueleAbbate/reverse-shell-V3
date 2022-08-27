@@ -1,4 +1,4 @@
-##  reverse shell V1.0
+##  CONDOR reverse shell V1.0
 ## Language 
     C++
 ## Author
