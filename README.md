@@ -1,5 +1,5 @@
-![condorvsvirustotal](https://user-images.githubusercontent.com/91976683/187035611-d7fcb882-e768-48a3-a912-ba83609607b6.PNG)
-##  CONDOR reverse shell V1.0
+![Cattura](https://user-images.githubusercontent.com/91976683/219817115-383c3b3d-ba7a-4f98-8edd-3af9ef6b5f74.PNG)
+##  CONDOR reverse shell V2.0
 ## Language 
     C++
 ## Author
