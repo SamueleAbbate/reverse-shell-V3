@@ -1,6 +1,6 @@
-##WITH THE FIRST TYPE OF COMPILATION
+## WITH THE FIRST TYPE OF COMPILATION
 ![Cattura](https://user-images.githubusercontent.com/91976683/219817115-383c3b3d-ba7a-4f98-8edd-3af9ef6b5f74.PNG)
-##WITH THE SECOND TYPE OF COMPILATION
+## WITH THE SECOND TYPE OF COMPILATION
 ![Immagine 2023-02-22 114022](https://user-images.githubusercontent.com/91976683/220597064-7e29dbd9-9560-481a-a3e8-700deee24a25.png)
 ##  CONDOR reverse shell V2.0
 ## Language 
